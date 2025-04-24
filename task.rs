@@ -1,4 +1,7 @@
-// src/task.rs
+// task struct for to-do lists
+// created by Sam Good
+
+// struct definition for task
 pub struct Task {
     name: String,
     description: String,
@@ -6,6 +9,8 @@ pub struct Task {
 }
 
 impl Task {
+    // constructor, takes a name and description for the task
+    // automatically sets is_complete to false
     pub fn new(name: &str, description: &str) -> Self {
         Task {
             name: name.to_string(),
@@ -14,13 +19,17 @@ impl Task {
         }
     }
 
+    // marks a task as complete
     pub fn mark_complete(&mut self) {
         self.is_complete = true;
     }
 
-    pub fn mark_uncomplete(&mut self) {
+    // marks a task as incomplete
+    pub fn mark_incomplete(&mut self) {
         self.is_complete = false;
     }
+
+    // prints the name, desciption, and status of a task
     pub fn print(&self) {
         println!(
             "{}: {} [{}]",
@@ -30,8 +39,8 @@ impl Task {
         );
     }
 
+    // gets the name of the task
     pub fn get_name(&self) -> &str {
         &self.name
     }
-    
 }
