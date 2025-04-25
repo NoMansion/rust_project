@@ -47,7 +47,7 @@ fn not_empty_lists(lists: &LinkedList<ToDoList>) -> bool {
 fn main() {
     let mut lists: LinkedList<ToDoList> = LinkedList::new();
 
-    loop {
+    while (true) {
         println!("\nCurrent To-Do Lists:");
         print_all(&lists);
 
